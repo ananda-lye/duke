@@ -5,14 +5,12 @@ import java.util.ArrayList;
 
 public class Duke {
 
-    public static final int MAXSIZE = 100;
     public static final String GREETING = "Hello! I'm Duke.Duke\n" + "What can I do for you?";
     public static final String GOODBYE = "Bye. Hope to see you again soon!";
 
     public static void main(String[] args) {
         System.out.println(GREETING);
 
-        //Task[] taskList = new Task[MAXSIZE];
         ArrayList<Task> taskArrayList = new ArrayList<>();
 
         Scanner scanner = new Scanner(System.in);
