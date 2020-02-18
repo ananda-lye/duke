@@ -1,5 +1,7 @@
 package Duke;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 import java.util.ArrayList;
 
@@ -10,6 +12,17 @@ public class Duke {
 
     public static void main(String[] args) {
         System.out.println(GREETING);
+
+        File f = new File("data/saved.txt");
+
+        try {
+            Scanner s = new Scanner(f);
+            while (s.hasNext()) {
+                System.out.println(s.nextLine());
+            }
+        } catch (FileNotFoundException e) {
+            System.out.println("File not found");
+        }
 
         ArrayList<Task> taskArrayList = new ArrayList<>();
 
@@ -124,5 +137,13 @@ public class Duke {
             return true;
         }
         return false;
+    }
+
+    private static void printFileContents() throws FileNotFoundException {
+        File f = new File("data/saved.txt"); // create a File for the given file path
+        Scanner s = new Scanner(f); // create a Scanner using the File as the source
+        while (s.hasNext()) {
+            System.out.println(s.nextLine());
+        }
     }
 }
